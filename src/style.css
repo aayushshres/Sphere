@@ -28,15 +28,21 @@ nav {
   justify-content: space-between;
 }
 
-a {
-  font-size: 30px;
-  color: white;
-}
-
 #title {
   font-weight: 600;
   font-size: 30px;
-  color: white;
+  background-image: radial-gradient(
+    circle,
+    #e3e3e3,
+    #d7d7d8,
+    #cbcccd,
+    #c0c0c3,
+    #b4b5b8,
+    #a8a9ad
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @media screen and (max-width: 768px) {
