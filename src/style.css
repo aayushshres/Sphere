@@ -39,3 +39,7 @@ nav ul {
   display: flex;
   gap: 4rem;
 }
+
+#title {
+  font-size: 40px;
+}
