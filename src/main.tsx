@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import "./style.css";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"; //24:50
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import getStarfield from "./components/starfield";
 import gsap from "gsap";
 
@@ -27,8 +27,8 @@ const sizes = {
 };
 
 // add light
-const light = new THREE.PointLight(0xffffff, 100, 20);
-light.position.set(0, 10, 10);
+const light = new THREE.DirectionalLight(0xffffff);
+light.position.set(-2, 0.5, 1.5);
 scene.add(light);
 
 // add camera
@@ -38,7 +38,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
-camera.position.z = 200;
+camera.position.z = 150;
 camera.updateProjectionMatrix();
 scene.add(camera);
 
@@ -76,9 +76,9 @@ loop();
 const tl = gsap.timeline({
   defaults: { duration: 1 },
 });
+tl.fromTo("nav", { y: "-100%" }, { y: "0%" });
 tl.fromTo(mesh.scale, { z: 0, x: 0, y: 0 }, { z: 1, x: 1, y: 1 });
 tl.fromTo(stars.scale, { z: 0, x: 0, y: 0 }, { z: 1, x: 1, y: 1 });
-tl.fromTo("nav", { y: "-100%" }, { y: "0%" });
 
 let mouseDown = false;
 let rgb = [];
