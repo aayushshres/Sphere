@@ -34,12 +34,6 @@ nav a {
   font-weight: bold;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 4rem;
-}
-
 #title {
   font-size: 40px;
 }
